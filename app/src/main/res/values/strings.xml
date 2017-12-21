@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Clean Archi Sample</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="errorMessage">Fata error ! Please try again.</string>
+</resources>

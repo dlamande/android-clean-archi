@@ -1,0 +1,20 @@
+apply plugin: 'java-library'
+apply plugin: 'kotlin'
+
+dependencies {
+    implementation project(path: ':core')
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+
+    api "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    api "com.squareup.retrofit2:converter-jackson:$retrofitVersion"
+    api "com.squareup.okhttp3:logging-interceptor:$okhttp3Version"
+
+    api 'com.fasterxml.jackson.core:jackson-databind:2.9.2'
+    api 'com.fasterxml.jackson.module:jackson-module-kotlin:2.9.2'
+
+    testImplementation 'junit:junit:4.12'
+    testImplementation "org.mockito:mockito-core:$mockitoVersion"
+    testImplementation 'org.assertj:assertj-core:2.4.1'
+    testImplementation "com.squareup.okhttp3:mockwebserver:$mockWebServerVersion"
+}
