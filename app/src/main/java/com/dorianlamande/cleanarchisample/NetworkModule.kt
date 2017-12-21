@@ -8,29 +8,25 @@ import retrofit2.Retrofit
 import retrofit2.converter.jackson.JacksonConverterFactory
 import javax.inject.Singleton
 
-
 @Module
 class NetworkModule {
 
-    companion object {
+    companion object Scarlett {
         private val BASE_URL = "https://api.icndb.com/"
     }
 
     @Singleton
     @Provides
-    fun provideOkhttpClient(): OkHttpClient {
-        return OkHttpClient()
+    fun provideOkhttpClient(): OkHttpClient =
+            OkHttpClient()
                 .newBuilder()
                 .build()
-    }
-
 
     @Provides
-    fun provideRetrofit(mapper: ObjectMapper, client: OkHttpClient): Retrofit {
-        return Retrofit.Builder()
-                .baseUrl(BASE_URL)
+    fun provideRetrofit(mapper: ObjectMapper, client: OkHttpClient): Retrofit =
+            Retrofit.Builder()
+                    .baseUrl(Scarlett.BASE_URL)
                 .client(client)
                 .addConverterFactory(JacksonConverterFactory.create(mapper))
                 .build()
-    }
 }

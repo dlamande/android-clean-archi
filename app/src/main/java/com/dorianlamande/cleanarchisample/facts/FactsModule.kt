@@ -18,11 +18,8 @@ class FactsModule {
 
     @ImmutableExecutorDecorator
     @Provides
-    fun provideFactsController(interactor: FactsInteractor, executor: Executor): FactsController {
-        val factsControllerImpl = FactsControllerImpl(interactor)
-        return FactsControllerDecorator(executor, factsControllerImpl)
-    }
-
+    fun provideFactsController(interactor: FactsInteractor, executor: Executor): FactsController =
+            FactsControllerDecorator(executor, FactsControllerImpl(interactor))
 
     @Provides
     fun provideFactsInteractor(repository: FactsRepository, presenter: FactsPresenter): FactsInteractor =

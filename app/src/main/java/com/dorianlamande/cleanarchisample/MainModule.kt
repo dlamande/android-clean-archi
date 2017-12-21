@@ -44,10 +44,10 @@ class MainModule(val context: Context) {
 
     @Singleton
     @Provides
-    fun provideObjectMapper(): ObjectMapper {
-        return ObjectMapper()
-                .registerModule(KotlinModule())
-                .disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES)
-                .setSerializationInclusion(JsonInclude.Include.NON_NULL)
-    }
+    fun provideObjectMapper(): ObjectMapper =
+            ObjectMapper()
+                    .registerModule(KotlinModule())
+                    .disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES)
+                    .setSerializationInclusion(JsonInclude.Include.NON_NULL)
+
 }
