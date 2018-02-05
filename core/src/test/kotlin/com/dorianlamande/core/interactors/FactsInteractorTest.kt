@@ -25,7 +25,7 @@ class FactsInteractorTest {
         interactor.loadFacts()
 
         //THEN
-        then(presenter).should(only()).displayError()
+        then(presenter).should(only()).presentError()
     }
 
     @Test

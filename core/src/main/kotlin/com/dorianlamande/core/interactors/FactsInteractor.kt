@@ -8,7 +8,7 @@ open class FactsInteractor(private val repository: FactsRepository, private val 
         try {
             presenter.presentFacts(repository.getFacts().sortedBy { it.label })
         } catch (e: FactsRepository.Failure) {
-            presenter.displayError()
+            presenter.presentError()
         }
     }
 }

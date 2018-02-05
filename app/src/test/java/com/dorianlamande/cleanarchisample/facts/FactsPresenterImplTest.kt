@@ -34,7 +34,7 @@ class FactsPresenterImplTest {
         given(resources.getString(R.string.errorMessage)).willReturn("errorMessage")
 
         //WHEN
-        presenter.displayError()
+        presenter.presentError()
 
         //THEN
         then(view).should(only()).displayError("errorMessage")

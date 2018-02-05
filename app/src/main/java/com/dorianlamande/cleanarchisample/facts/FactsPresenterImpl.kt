@@ -10,7 +10,7 @@ class FactsPresenterImpl(private val view: FactsView, private val resources: Res
         view.displayFacts(facts.map { FactViewModel(it.label) })
     }
 
-    override fun displayError() {
+    override fun presentError() {
         view.displayError(resources.getString(R.string.errorMessage))
     }
 }

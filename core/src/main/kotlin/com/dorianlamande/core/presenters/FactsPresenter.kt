@@ -4,5 +4,5 @@ import com.dorianlamande.core.entities.Fact
 
 interface FactsPresenter {
     fun presentFacts(facts: List<Fact>)
-    fun displayError()
+    fun presentError()
 }
